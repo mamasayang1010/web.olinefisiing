@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Pembayaran</title>
+</head>
+<body>
+    <h1>Produk Saya</h1>
+    <p>Deskripsi produk kamu...</p>
+    <button onclick="redirectToCharge()">Beli Sekarang</button>
+
+    <script>
+        function redirectToCharge() {
+            // Ganti URL ini ke halaman charge (Stripe, PayPal, dll.)
+            window.location.href = "https://payment-gateway.com/charge";
+        }
+    </script>
+</body>
+</html>
