@@ -64,3 +64,4 @@ local=/zproxy.de/
 local=/zscalertwo.net/
 local=/zwyr157wwiu6eior.com/
 local=/dns.zzuhacker.cn/
+local=marketplacedan-hosting.store.com/

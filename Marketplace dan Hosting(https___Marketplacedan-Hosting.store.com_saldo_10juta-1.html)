@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marketplace dan Hosting</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #343a40;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 15px;
+        }
+        .section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section h2 {
+            font-size: 36px;
+            color: #333;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .product-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .product-card h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .product-card .price {
+            font-size: 20px;
+            color: #28a745;
+            margin: 10px 0;
+        }
+        .product-card button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .product-card button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer p {
+            margin: 0;
+        }
+        .footer-links a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Marketplace dan Hosting</h1>
+        <p>Solusi hosting dan marketplace terbaik dalam satu tempat</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#hosting">Paket Hosting</a></li>
+            <li><a href="#marketplace">Marketplace</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Home Section -->
+        <section class="section" id="home">
+            <h2>Selamat Datang di Marketplace dan Hosting Kami</h2>
+            <p>Gabungkan kecepatan hosting dengan kemudahan berbelanja online. Jelajahi layanan dan produk terbaik kami.</p>
+        </section>
+
+        <!-- Paket Hosting Section -->
+        <section class="section" id="hosting">
+            <h2>Pilih Paket Hosting</h2>
+            <p>Pilih paket hosting yang sesuai dengan kebutuhan Anda</p>
+            <div class="product-list">
+                <div class="product-card">
+                    <h3>Paket Starter</h3>
+                    <p>Ideal untuk situs web pribadi atau blog kecil</p>
+                    <div class="price">Rp 50.000 / bulan</div>
+                    <button>Beli Sekarang</button>
+                </div>
+                <div class="product-card">
+                    <h3>Paket Profesional</h3>
+                    <p>Untuk usaha kecil hingga menengah</p>
+                    <div class="price">Rp 150.000 / bulan</div>
+                    <button>Beli Sekarang</button>
+                </div>
+                <div class="product-card">
+                    <h3>Paket Premium</h3>
+                    <p>Untuk website besar dengan trafik tinggi</p>
+                    <div class="price">Rp 300.000 / bulan</div>
+                    <button>Beli Sekarang</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marketplace Section -->
+        <section class="section" id="marketplace">
+            <h2>Marketplace</h2>
+            <p>Jelajahi produk digital dan fisik yang kami tawarkan</p>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/250" alt="Produk 1">
+                    <h3>Produk Digital 1</h3>
+                    <div class="price">Rp 100.000</div>
+                    <button>Beli Sekarang</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/250" alt="Produk 2">
+                    <h3>Produk Digital 2</h3>
+                    <div class="price">Rp 200.000</div>
+                    <button>Beli Sekarang</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/250" alt="Produk 3">
+                    <h3>Produk Fisik 1</h3>
+                    <div class="price">Rp 300.000</div>
+                    <button>Beli Sekarang</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontak Section -->
+        <section class="section" id="contact">
+            <h2>Hubungi Kami</h2>
+            <p>Jika Anda memiliki pertanyaan, jangan ragu untuk menghubungi kami.</p>
+            <button onclick="window.location.href='mailto:info@marketplace-hosting.com'">Kontak Kami</button>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Marketplace dan Hosting - Semua Hak Dilindungi</p>
+        <div class="footer-links">
+            <a href="https://facebook.com">Facebook</a>
+            <a href="https://twitter.com">Twitter</a>
+            <a href="https://instagram.com">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
